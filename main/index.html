@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Static Timing Analysis (STA)</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">
+  <link href="../aseets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <h1>Static Timing Analysis (STA)</h1>
+    </header>
+   
+   <!-- Section 1: Overview of Static Timing Analysis -->
+   <section id="section1" data-nav="Overview" class="your-active-class">
+    <div class="landing__container">
+        <h2>Overview of Static Timing Analysis</h2>
+        <div class="content">
+            <div class="text">
+                <p>Static Timing Analysis (STA) checks the worst-case propagation delay for all possible input vectors in digital circuits, ensuring timing constraints are met without needing actual input data.</p>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Significantly faster than timing-driven gate-level simulation.</li>
+                    <li>Exhaustive testing of all timing paths under constraints.</li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Does not verify circuit functionality.</li>
+                    <li>Requires accurate definition of timing constraints.</li>
+                </ul>
+            </div>
+            <div class="image">
+                <img src="../aseets/images/overview.png" alt="Overview Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section 2: Timing Paths -->
+  <section id="section2" data-nav="Timing Paths">
+    <div class="landing__container">
+      <h2>Timing Paths</h2>
+      <p>A timing path in STA represents the route from a startpoint to an endpoint through clock pins, primary inputs (PI), primary outputs (PO), and other elements.</p>
+      <ul>
+        <li><strong>Startpoint:</strong> Origin of the timing path, typically a clock pin.</li>
+        <li><strong>Endpoints:</strong> Destination of the timing path, often a primary output or clock pin.</li>
+        <li><strong>Input Ports (PI):</strong> External inputs affecting timing.</li>
+        <li><strong>Output Ports (PO):</strong> External outputs affected by timing.</li>
+        <li><strong>Memories / Hard Macros:</strong> Specific components with predefined timing characteristics.</li>
+      </ul>
+      <img src="../aseets/images/path.png" alt="Timing Paths Image" />
+  </section>
+  
+  <!-- Section 3: Static Timing Analysis -->
+  <section id="section3" data-nav="Static Timing Analysis">
+    <div class="landing__container">
+      <h2>Static Timing Analysis</h2>
+      <div class="secction3-display">
+        <ul class="card-titles">
+          <li data-card="card1">Register to Register (reg2reg)</li>
+          <li data-card="card2">Register to Output (reg2out)</li>
+          <li data-card="card3">Input to Register (in2reg)</li>
+          <li data-card="card4">Input to Output (in2out)</li>
+        </ul>
+        <!-- Card Container -->
+        <div class="card-container">
+    
+          <!-- Card 1 -->
+          <div class="card" id="card1">
+            <img src="../aseets/images/reg2reg.png" alt="Image 1">
+            <div class="card__content">
+              <p>A timing path between two registers in a digital circuit, analyzing signal propagation from one flip-flop to another.</p>
+            </div>
+          </div>
+    
+          <!-- Card 2 -->
+          <div class="card" id="card2">
+            <img src="../aseets/images/reg2out.png" alt="Image 2">
+            <div class="card__content">
+              <p>Examines timing paths from a register to a primary output, ensuring proper signal timing for data output.</p>
+            </div>
+          </div>
+    
+          <!-- Card 3 -->
+          <div class="card" id="card3">
+            <img src="../aseets/images/in2reg.png" alt="Image 3">
+            <div class="card__content">
+              <p>Timing analysis focusing on signal paths from primary inputs to registers, critical for data input timing.</p>
+            </div>
+          </div>
+    
+          <!-- Card 4 -->
+          <div class="card" id="card4">
+            <img src="../aseets/images/in2out.png" alt="Image 4">
+            <div class="card__content">
+              <p>Investigates timing paths from primary inputs directly to primary outputs, ensuring correct data timing across the circuit.</p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 4: Goals of Static Timing Analysis -->
+     <section id="section4" data-nav="Goals">
+      <div class="landing__container">
+        <h2>Goals of Static Timing Analysis</h2>
+        <p>Key objectives of STA include:</p>
+        <ul style="line-height: 1.4em;">
+          <li>Verification of maximum and minimum delay constraints across all paths.</li>
+          <li>Starting with a gate-level netlist and applying timing models from the library.</li>
+          <li>Reporting violations of timing constraints and their locations for corrective action.</li>
+          <li>Comprehensive analysis to identify and prioritize timing issues.</li>
+        </ul>
+        <p>Static Timing Analysis ensures that digital circuits meet timing requirements critical for proper operation.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="page__footer">
+    Static Time Analysis 
+  </footer>
+  <script src="../js/app.js"></script>
+</body>
+</html>
